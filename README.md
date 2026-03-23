@@ -2,21 +2,28 @@
 借助AI生成完整的测试用例
 
 ## 快速开始
-1. 将 `gen-functional-testcase` 和 `requirement-to-features` 放入 ClaudeCode skills 目录下面。
-2. 启动 ClaudeCode 后，调用 `/requirement-to-features` 同时，将 「场次模板配置PRD文档.md」 放入后开始执行。
-3. 等待输出功能文档。
-4. 调用 `/gen-functional-testcase` 生成测试用例。
+```shell
+cp -r skills/requirement-to-features ~/.claude/skills/requirement-to-features
+cp -r skills/gen-functional-testcase ~/.claude/skills/gen-functional-testcase
+cp -r skills/update-workflow ~/.claude/skills/update-workflow
+
+conda create -n ai_testcases python=3.11
+conda activate ai_testcases
+pip install -r requirements.txt
+
+# 激活 claude
+claude
+# 在claude对话窗口输入
+请帮我生成以下文档的测试用例 场次模板配置PRD文档.md
+```
+1. 执行命令 `sh init.sh`
+2. 在当前目录打开 ClaudeCode。
+3. 将需求文档放入对话窗口，并告知 claude 你需要生成测试用例
 
 
 ## 配置适合你的内容
 
-1. 新建 `~/testcases` 文件夹，或者修改 `requirement-to-features/Skill.md` 中的测试用例文件夹路径，以适配你自己的需要。
-2. 修改 `requirement-to-features/module_knowledge` 中的模块知识，这里只需要你将模块中某些内容的操作流程记录下来即可。
-3. 修改 `gen-funcational-testcase/module.md` 中的模块信息，以适配你自身项目的模块层级/路径信息。
-4. 将 `gen-functional-testcase` 和 `requirement-to-features` 放入 ClaudeCode skills 目录下面。
-5. 启动 ClaudeCode 后，调用 `/requirement-to-features` 同时贴入本次的PRD文档。
-6. 等待输出功能文档。
-7. 调用 `/gen-functional-testcase` 生成测试用例。
+1. 在 `knowledge` 中，根据已有的示例内容修改 modules.md 以及新增 `module_knowledge` 的流程知识。
 
 
 ## 效果展示

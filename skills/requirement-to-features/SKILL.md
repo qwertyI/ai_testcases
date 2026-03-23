@@ -120,7 +120,7 @@ description: Breaks down product/backend requirements into structured functional
 
 ### 第〇.五步：查找并读取模块知识（必做）
 
-在正式梳理流程和拆解功能点之前，**必须**先查找本 skill 目录下的 `module_knowlege/` 文件夹，读取与本次需求相关的模块知识文档。
+在正式梳理流程和拆解功能点之前，**必须**先查找本 knowledge 目录下的 `module_knowlege/` 文件夹，读取与本次需求相关的模块知识文档。
 
 1. **识别涉及的模块**：从需求内容中提取涉及的业务模块关键词（如「AML规则配置」「出金申请」「流水管理」等）。
 
@@ -177,7 +177,7 @@ description: Breaks down product/backend requirements into structured functional
 
 ### 新需求（用户输入的是一段需求描述文字）
 
-1. 在 `~/testcases/` 下按当天日期新建文件夹：`~/testcases/YYYY-MM-DD/`，如果当天已有日期文件夹，则使用已有文件夹即可。
+1. 在 `output/testcases/` 下按当天日期新建文件夹：`output/testcases/YYYY-MM-DD/`，如果当天已有日期文件夹，则使用已有文件夹即可。
 2. 在日期文件夹下面，根据需求内容自动需求相关的文件夹，要求简洁、能体现需求主题，如 `无痕撤销记录表与被撤销流水隐藏`
 3. 在需求文件夹下面，生成需求文件，要求以需求文件夹名 + '_功能点.md' 为名，如 `无痕撤销记录表与被撤销流水隐藏_功能点.md`
 4. 将完整的功能点清单写入该文件

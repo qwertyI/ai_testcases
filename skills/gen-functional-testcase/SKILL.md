@@ -25,7 +25,7 @@ description: Generates functional test cases only (normal flow, reverse flow, bo
 | 列名     | 说明与规则 |
 |----------|------------|
 | 用例名称 | 清晰、简洁，从名称即可看出验证目的 |
-| 所属模块 | 从根到叶的完整路径，层级用 `/` 分隔；**必须**从 [modules.md](modules.md) 的模块树开始，可在此基础上追加需求文档的章节作为子模块（如：业务参数设置/风控规则/AML规则配置/计算逻辑）；**禁止**出现"本地"等无关内容 |
+| 所属模块 | 从根到叶的完整路径，层级用 `/` 分隔；**必须**从 `knowledge/modules.md` 的模块树开始，可在此基础上追加需求文档的章节作为子模块（如：业务参数设置/风控规则/AML规则配置/计算逻辑）；**禁止**出现"本地"等无关内容 |
 | 用例等级 | `P0`（核心主流程、关键业务逻辑、数据一致性验证）/ `P1`（重要功能点、常用场景、异常处理）/ `P2`（一般功能、边界场景、辅助功能）/ `P3`（低优先级、极端场景、可选功能）；大多数新增需求用例为P1-P2 |
 | 责任人   | 默认填写「QwertyI」，除非用户明确指定其他人员 |
 | 备注     | 执行目的、注意事项、需验证的库表/接口等 |
@@ -117,7 +117,7 @@ description: Generates functional test cases only (normal flow, reverse flow, bo
 
 ## 所属模块（必守）
 
-- **必须**从 [modules.md](modules.md) 的模块树中选取**完整路径**（从一级到具体叶子），然后追加需求文档章节作为小模块。
+- **必须**从 `knowledge/modules.md` 的模块树中选取**完整路径**（从一级到具体叶子），然后追加需求文档章节作为小模块。
 - 小模块名称从需求文档章节标题中提取核心关键词，去除序号和冗余描述。
 - **严禁**在模块路径中出现"本地"、"测试"等无关业务的词汇。
 - 每个小模块下建议至少 2 条 case；同一需求可分布在多个小模块下。
@@ -192,7 +192,7 @@ description: Generates functional test cases only (normal flow, reverse flow, bo
 2. **分析需求结构**：仔细阅读需求文档，识别章节结构，提取章节标题作为小模块名称。
 3. **判断用例类型**：根据上文「何时包含各类用例」判断本批要生成功能用例、逆向流程用例、边界值用例中的哪几种；可简要说明理由。
 4. **构建模块路径**：
-   - 从 [modules.md](modules.md) 选定与需求对应的大模块路径
+   - 从 `knowledge/modules.md` 选定与需求对应的大模块路径
    - 从需求文档章节标题中提取小模块名称（去除序号、简化描述）
    - 组合为完整路径：`{大模块路径}/{小模块名称}`
    - 确保路径中不含"本地"、"测试"等无关词汇
@@ -202,8 +202,8 @@ description: Generates functional test cases only (normal flow, reverse flow, bo
    - 标签仅用 `功能用例`、`逆向流程用例`、`边界值用例`
 6. **识别需求文档路径**：识别出需求文档所在的文件夹，后续生成的文件都要在这个文件夹下面。
 7. **输出文件**：输出到 `{需求文档所在文件夹}/{requirement}_functional_tc.md`。
-8. **转成Excel文档**：切到conda sbkb 环境，用 `~/.claude/skills/gen-functional-testcase/md_to_xlsx_local.py` 将生成的markdown文档输出为 Excel 文档。输出的目录为需求文档所在文件夹。
-9. **将Excel转成XMind**：切到conda sbkb 环境，用 `~/.claude/skills/gen-functional-testcase/xlsx_to_xmind.py` 将生成的 Excel 文档输出为 XMind 文档。输出的目录为需求文档所在文件夹。
+8. **转成Excel文档**：切到conda ai_testcases 环境，用 `~/.claude/skills/gen-functional-testcase/md_to_xlsx_local.py` 将生成的markdown文档输出为 Excel 文档。输出的目录为需求文档所在文件夹。
+9. **将Excel转成XMind**：切到conda ai_testcases 环境，用 `~/.claude/skills/gen-functional-testcase/xlsx_to_xmind.py` 将生成的 Excel 文档输出为 XMind 文档。输出的目录为需求文档所在文件夹。
 
 ## 书写约定
 
@@ -213,4 +213,4 @@ description: Generates functional test cases only (normal flow, reverse flow, bo
 
 ## 参考
 
-- 模块树定义（所属模块唯一依据）：[modules.md](modules.md)
+- 模块树定义（所属模块唯一依据）：`knowledge/modules.md`
