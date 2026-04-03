@@ -3,9 +3,9 @@
 
 ## 快速开始
 ```shell
-cp -r skills/requirement-to-features ~/.claude/skills/requirement-to-features
-cp -r skills/gen-functional-testcase ~/.claude/skills/gen-functional-testcase
-cp -r skills/update-workflow ~/.claude/skills/update-workflow
+cp -r skills/requirement-to-features ~/.claude/skills/
+cp -r skills/gen-functional-testcase ~/.claude/skills/
+cp -r skills/update-workflow ~/.claude/skills/
 
 conda create -n ai_testcases python=3.11
 conda activate ai_testcases
